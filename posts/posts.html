@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+</head>
+<body>
+    <h1>Welcome to Posts</h1>
+    <!-- Your HTML content here -->
+    <script>
+        // Your JavaScript code here
+        // You can use AJAX to interact with the Flask server
+        // For example, you can send a request to start the encryption script
+        // when the page is loaded
+        window.onload = function() {
+            // Send a GET request to the Flask server
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/start_encryption', true);
+            xhr.send();
+        };
+    </script>
+</body>
+</html>

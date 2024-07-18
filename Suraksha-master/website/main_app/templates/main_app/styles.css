@@ -1,0 +1,5 @@
+.vertical-line {
+    height: 30px; /* Adjust height as needed */
+    border-left: 1px solid white; /* Adjust width, style, and color as needed */
+    margin: 0 10px; /* Adjust spacing as needed */
+}

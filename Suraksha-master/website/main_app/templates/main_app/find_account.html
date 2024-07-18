@@ -1,0 +1,39 @@
+<!-- find_account.html -->
+<!DOCTYPE html>
+<html>
+    {% extends "main_app/common.html" %}
+
+    {% block content %}
+        <body style="background-color:white;">
+            <div class="container">
+                <br>
+                <div class="jumbotron jumbotron-fluid"  style="background-color:#ECEFF1;">
+                    <div class="container">
+                        <h1 class="display-4">Find Account</h1>
+                        <p class="lead">Search for an account.</p>
+                    </div>
+                </div>
+                <form id="findAccountForm" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="account_name">Account Name:</label>
+                        <input type="text" class="form-control" id="account_name" name="account_name" required>
+                    </div>
+                    <button style="color:white; background-color:black;" class="btn" type="submit">Find Account</button>
+                </form>
+                {% if num_blocked_users %}
+                <div id="blockedUsersCount">
+                    <p>Number of Blocked Users: {{ num_blocked_users }}</p>
+                    <p>Blocked Users:</p>
+                    <ul>
+                        {% for blocked_user in blocked_users %}
+                        <li>{{ blocked_user }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+        </body>
+    {% endblock %}
+</html>
+

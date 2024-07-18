@@ -1,0 +1,35 @@
+<!-- report_account.html -->
+<!DOCTYPE html>
+<html>
+    {% extends "main_app/common.html" %}
+    {% block content %}
+        <body style="background-color:white;">
+            <div class="container">
+                <br>
+                <div class="jumbotron jumbotron-fluid"  style="background-color:#ECEFF1;">
+                    <div class="container">
+                        <h1 class="display-4">Report Account</h1>
+                        <p class="lead">Report an account.</p>
+                    </div>
+                </div>
+                <form id="reportAccountForm" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="account_id">Account ID:</label>
+                        <input type="text" class="form-control" id="account_id" name="account_id" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reason">Reason to Block:</label>
+                        <textarea class="form-control" id="reason" name="reason" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Your Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <button style="color:white; background-color:black;" class="btn" type="submit">Report Account</button>
+                </form>
+                
+            </div>
+        </body>
+    {% endblock %}
+</html>
